@@ -1,0 +1,24 @@
+name: CI for function
+
+on:
+  push:
+    branches:
+      - '**'
+env:
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python 3.7 Environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: 'Resolve Project Dependencies Using Pip'
+        shell: bash
+        run: |
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt --target=".python_packages/lib/site-packages"
+          popd
