@@ -5,7 +5,7 @@ on:
     branches:
       - '**'
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'azure-function'
 
 jobs:
   build:
