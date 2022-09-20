@@ -1,5 +1,5 @@
-#requests
-#azure-functions
-jira
+requests
 azure-functions
-azure-appconfiguration
+# jira
+# azure-functions
+# azure-appconfiguration
