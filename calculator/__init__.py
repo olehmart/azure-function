@@ -2,7 +2,7 @@ import logging
 
 import azure.functions as func
 
-from calculator import highest_price_function
+from calculator.calculator import highest_price_function
 
 import json
 
