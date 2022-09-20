@@ -1,4 +1,4 @@
-name: CI for function
+name: CD for function
 
 on:
   push:
@@ -28,7 +28,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt --target=".python_packages/lib/site-packages"
           popd
-
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: 'Deploy Azure Functions action'
         uses: Azure/functions-action@v1
         with:
